@@ -6,20 +6,52 @@ function generatePassword() {
     const specialC = '!@#$%^&*(-+;/?><~[{,'.split('');
     const upperC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     const mixedC = {
-        lowerC: 'abcdefghijklmnopqrstuvwxyz'.split('');
-        numbers: '123456789'.split('');
-        specialC: '!@#$%^&*(-+;/?><~[{,'.split('');
-        upperC: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        lowerC: 'abcdefghijklmnopqrstuvwxyz'.split(''),
+        numbers: '123456789'.split(''),
+        specialC: '!@#$%^&*(-+;/?><~[{,'.split(''),
+        upperC: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     };
-    const randomPw = '';
 
-    for (pw = 0; pw < lowerC.length; pw++) {
-        const randomIndex = Math.floor(Math.random() * lowerC.length);
-        console.log(lowerC[randomIndex] + numbers.slice(randomIndex) + randomPw + randomIndex);
-        // const newPass = randomPw + randomIndex;
-
+    const empty = [];
+    const array = ["lowerC", "numbers", "specialC", "upperC"];
+    for (i = 0; i < mixedC.length; i++) {
+        const randomPw = Math.floor(Math.random() * mixedC.length);
+        console.log(mixedC[randomPw]);
+        // nothing is showing up in the console anymore and not sure which change broke the code.
+        // console.log(mixedC)
     }
+
+    // for (pw = 0; pw < mixedC.length; pw++) {
+    //     const randomPw = Math.floor(Math.random() * mixedC.length);
+    //     const random = array[randomPw];
+    //     // const m = empty.push(mixedC[randomPw]);
+    //     // let p = " ";
+    //     // console.log(mixedC[random]);
+    //     console.log(empty)
+
+    // }
+
+
+
+
+    // document.getElementById("password").innerHTML = p;
+
+
+    // console.log(empty + randomPw)
+
+    // for (pw = 0; pw < mixedC.length; pw++) {
+    //         const randomIndex = Math.floor(Math.random() * mixedC.length);
+    //         console.log()
+
+    //         // const newPass = randomPw + randomIndex;
+    //     }
+    //     for (pw = 0; pw < numbers.length; pw++) {
+    //         const randomNumbers = Math.floor(Math.random() * numbers.length);
+    //         console.log(numbers[randomNumbers] + lowerC[randomIndex] + '')
+    //     }
+    // window.generatePassword = generatePassword;
 }
+
 
 
 generatePassword()
@@ -30,16 +62,3 @@ generatePassword()
 
 
 // };
-
-// function getRandom(arr, n) {
-// var result = new Array(n),
-//     len = arr.length,
-//     taken = new Array(len);
-// if (n > len)
-//     throw new RangeError("getRandom: more elements taken than available");
-// while (n--) {
-//     var x = Math.floor(Math.random() * len);
-//     result[n] = arr[x in taken ? taken[x] : x];
-//     taken[x] = --len in taken ? taken[len] : len;
-// }
-// return result;
