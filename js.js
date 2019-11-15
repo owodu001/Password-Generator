@@ -11,7 +11,7 @@ function generatePassword() {
         specialC: '!@#$%^&*(-+;/?><~[{,'.split(''),
         upperC: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     };
-
+    console.log(lowerC + numbers + specialC + upperC)
     const empty = [];
     const array = ["lowerC", "numbers", "specialC", "upperC"];
     for (i = 0; i < mixedC.length; i++) {
