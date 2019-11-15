@@ -11,12 +11,12 @@ function generatePassword() {
         specialC: '!@#$%^&*(-+;/?><~[{,'.split(''),
         upperC: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
     };
-    console.log(lowerC + numbers + specialC + upperC)
+    // console.log(lowerC + numbers + specialC + upperC)
     const empty = [];
     const array = ["lowerC", "numbers", "specialC", "upperC"];
-    for (i = 0; i < mixedC.length; i++) {
-        const randomPw = Math.floor(Math.random() * mixedC.length);
-        console.log(mixedC[randomPw]);
+    for (i = 0; i < lowerC.length; i++) {
+        const randomPw = Math.floor(Math.random() * lowerC.length);
+        console.log(lowerC[randomPw] + numbers[randomPw] + specialC[randomPw] + upperC[randomPw]);
         // nothing is showing up in the console anymore and not sure which change broke the code.
         // console.log(mixedC)
     }
