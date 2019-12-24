@@ -1,64 +1,52 @@
-// prompt('Please enter your password criteria. Choose from the following options: Special Characters; Numeric Characters; Upper Case Characters; Lower Case Characters');
-
 function generatePassword() {
-    const lowerC = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    const numbers = '123456789'.split('');
-    const specialC = '!@#$%^&*(-+;/?><~[{,'.split('');
-    const upperC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    const mixedC = {
-        lowerC: 'abcdefghijklmnopqrstuvwxyz'.split(''),
-        numbers: '123456789'.split(''),
-        specialC: '!@#$%^&*(-+;/?><~[{,'.split(''),
-        upperC: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
-    };
-    // console.log(lowerC + numbers + specialC + upperC)
-    const empty = [];
-    const array = ["lowerC", "numbers", "specialC", "upperC"];
-    for (i = 0; i < lowerC.length; i++) {
-        const randomPw = Math.floor(Math.random() * lowerC.length);
-        console.log(lowerC[randomPw] + numbers[randomPw] + specialC[randomPw] + upperC[randomPw]);
-        // nothing is showing up in the console anymore and not sure which change broke the code.
-        // console.log(mixedC)
+    // define password contents
+    const lowerC = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const specialC = '!@#$%^&*(-+;/?><~[{,';
+    const upperC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const allChar = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-+;/?><~[{,ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+
+
+    // define HTMLels
+    const uppercaseEl = document.getElementById("uppercase");
+    const lowercaseEl = document.getElementById("lowercase");
+    const numbersEl = document.getElementById("numbers");
+    const symbolsEl = document.getElementById("symbols");
+    const lengthEl = document.getElementById("length");
+    const resultEl = document.getElementById("result");
+
+    const passlength = +lengthEl.value;
+
+    let password = "";
+    let chars = "";
+
+    // hook up length textbox to only display passwords of specified length
+    // if statements to call functions based on user input
+    if (uppercaseEl.checked) {
+        chars = chars + upperC;
+    }
+    if (lowercaseEl.checked) {
+        chars = chars + lowerC;
+    }
+    if (numbersEl.checked) {
+        chars = chars + numbers;
+    }
+    if (symbolsEl.checked) {
+        chars = chars + specialC;
+    } else {
+        chars = chars + "";
     }
 
-    // for (pw = 0; pw < mixedC.length; pw++) {
-    //     const randomPw = Math.floor(Math.random() * mixedC.length);
-    //     const random = array[randomPw];
-    //     // const m = empty.push(mixedC[randomPw]);
-    //     // let p = " ";
-    //     // console.log(mixedC[random]);
-    //     console.log(empty)
+    for (i = 0; i < passlength; i++) {
+        password = password + chars[Math.floor(Math.random() * chars.length)];
 
-    // }
+    }
+    resultEl.innerHTML = password;
+    // create functions to return combos of password contents
 
-
-
-
-    // document.getElementById("password").innerHTML = p;
-
-
-    // console.log(empty + randomPw)
-
-    // for (pw = 0; pw < mixedC.length; pw++) {
-    //         const randomIndex = Math.floor(Math.random() * mixedC.length);
-    //         console.log()
-
-    //         // const newPass = randomPw + randomIndex;
-    //     }
-    //     for (pw = 0; pw < numbers.length; pw++) {
-    //         const randomNumbers = Math.floor(Math.random() * numbers.length);
-    //         console.log(numbers[randomNumbers] + lowerC[randomIndex] + '')
-    //     }
-    // window.generatePassword = generatePassword;
 }
 
+// const finalPassword = generatedPassword.slice(0, length);
 
-
-generatePassword()
-
-// const pwgenerator = {
-// numbers: '123456789'.split(''),
-//     lowerC: 'abcdefghijklmnopqrstuvwxyz'.split(''),
-
-
-// };
+// 	return finalPassword;
