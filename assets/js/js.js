@@ -21,7 +21,6 @@ function generatePassword() {
     let password = "";
     let chars = "";
 
-    // hook up length textbox to only display passwords of specified length
     // if statements to call functions based on user input
     if (uppercaseEl.checked) {
         chars = chars + upperC;
@@ -35,18 +34,25 @@ function generatePassword() {
     if (symbolsEl.checked) {
         chars = chars + specialC;
     } else {
-        chars = chars + "";
+        alert("Please make a selection");
     }
 
     for (i = 0; i < passlength; i++) {
         password = password + chars[Math.floor(Math.random() * chars.length)];
 
     }
-    resultEl.innerHTML = password;
-    // create functions to return combos of password contents
+    resultEl.innerHTML = password.slice(0, passlength);
+
+    //function to copy password to clipboard
 
 }
 
-// const finalPassword = generatedPassword.slice(0, length);
+document.getElementById("clipboard").addEventListener("click", function() {
 
-// 	return finalPassword;
+    document.getElementById("result").select();
+
+    document.execCommand("Copy");
+
+    alert("Password copied to clipboard!");
+
+});
