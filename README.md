@@ -8,7 +8,7 @@ This application generates a password based on criteria selected by the user.
 
 ## Visuals
 
-![image](https://user-images.githubusercontent.com/55159065/71425697-a29d6d80-2665-11ea-8367-33e5a2a6a89b.png)
+![image](https://user-images.githubusercontent.com/55159065/71426160-63721b00-266b-11ea-88c6-2a102f75dc1b.png)
 
 
 
