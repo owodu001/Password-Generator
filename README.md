@@ -1,10 +1,14 @@
-# js1
+# Password-Generator
 
-Password Generator project README
+Live site: https://owodu001.github.io/Password-Generator/
 
-Live site: https://owodu001.github.io/js1/
+## Description
 
-The goal of this project was to create a password generator based on criteria selected by the user. 
+This application generates a password based on criteria selected by the user. 
 
-Though my code is non-funtioning, I learned an array of new topics concerning JavaScript.
+## Visuals
+
+![image](https://user-images.githubusercontent.com/55159065/71425697-a29d6d80-2665-11ea-8367-33e5a2a6a89b.png)
+
+
 
