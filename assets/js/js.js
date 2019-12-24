@@ -33,8 +33,6 @@ function generatePassword() {
     }
     if (symbolsEl.checked) {
         chars = chars + specialC;
-    } else {
-        alert("Please make a selection");
     }
 
     for (i = 0; i < passlength; i++) {
