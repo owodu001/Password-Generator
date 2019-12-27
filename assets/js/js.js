@@ -22,6 +22,7 @@ function generatePassword() {
     let chars = "";
 
     // if statements to add characters based on user input
+    // learned about checkboxes here: https://www.youtube.com/watch?v=duNmhKgtcsI
     if (uppercaseEl.checked) {
         chars = chars + upperC;
     }
@@ -53,6 +54,7 @@ function generatePassword() {
 }
 
 //function to copy password to clipboard
+//learned about copying to clipboard here: https://www.youtube.com/watch?v=9sT03jEwcaw
 document.getElementById("clipboard").addEventListener("click", function() {
 
     document.getElementById("result").select();
