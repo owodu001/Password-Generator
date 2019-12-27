@@ -16,12 +16,12 @@ function generatePassword() {
     const lengthEl = document.getElementById("length");
     const resultEl = document.getElementById("result");
 
-    const passlength = +lengthEl.value;
+    const passlength = lengthEl.value;
 
     let password = "";
     let chars = "";
 
-    // if statements to call functions based on user input
+    // if statements to add characters based on user input
     if (uppercaseEl.checked) {
         chars = chars + upperC;
     }
@@ -35,16 +35,24 @@ function generatePassword() {
         chars = chars + specialC;
     }
 
+
+
     for (i = 0; i < passlength; i++) {
         password = password + chars[Math.floor(Math.random() * chars.length)];
 
     }
-    resultEl.innerHTML = password.slice(0, passlength);
 
-    //function to copy password to clipboard
+    if (!uppercaseEl.checked && !lowercaseEl.checked && !numbersEl.checked && !symbolsEl.checked) {
+        resultEl.innerHTML = "Please make a selection!";
+
+    } else {
+        resultEl.innerHTML = password;
+    }
+
 
 }
 
+//function to copy password to clipboard
 document.getElementById("clipboard").addEventListener("click", function() {
 
     document.getElementById("result").select();
